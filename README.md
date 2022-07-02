@@ -27,3 +27,8 @@
 
 - ```go install main.go```
 - ```go install github.com/cweill/gotests/gotests@latest```
+
+### Mod
+
+- ```go mod init demo```
+- ```go mod tidy```
