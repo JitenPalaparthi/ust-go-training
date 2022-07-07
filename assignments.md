@@ -19,3 +19,14 @@
   - sal > 20000 then tax is 12%
   - sal > 50000 then tax is 20%
   - print emply id, name , sal and his tax
+
+## Slice
+
+- create and instantiate a slice and reverse a slice
+- create and instantiate a slice find the repeated elements in the slice
+- take three slices ids, names, salaries and write tax computation
+  - sal > 12000 then tax is 10%
+  - sal > 20000 then tax is 12%
+  - sal > 50000 then tax is 20%
+  - print emply id, name , sal and his tax
+- create two 2D slices , assign values and perform matrix addition and substraction using functions

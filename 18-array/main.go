@@ -51,6 +51,7 @@ func main() {
 	//var arr4 [4]int
 	//var arr5 [3]int = arr4
 	// changeVal([3]int(arr4), 0, 10) // cannot convert
+
 }
 
 func changeVal(arr [3]int, index, value int) error {
