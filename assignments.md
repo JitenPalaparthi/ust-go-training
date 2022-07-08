@@ -30,3 +30,21 @@
   - sal > 50000 then tax is 20%
   - print emply id, name , sal and his tax
 - create two 2D slices , assign values and perform matrix addition and substraction using functions
+
+## Variadic
+
+- Create a sumOf function. Use ...interface{} as a parameter, perform sumOf based on input types as int8,int16,int32,int64,int,uint8,uint16,uint32,uint64,float32,float64 and string. Make sure all values in variadic argument are same. Fill the stub in 23-variadic program.
+  
+  func sumOfAny(vals ...interface{})interface{}{
+      // implement here
+    return nil
+  }
+
+## map
+
+- pass two slices of same type and same length as parameters
+  - 1- consider elements of first slice is key and second slice as value store them in a map.
+  - 2- The function returns map and an error
+  - if length of slice1 is not equal to length of slice2 then return error
+  - if slice one has duplicate elements return error becase duplicate elements cannot be given as keys.
+- Write a function to convert a map to a string and also to byte array

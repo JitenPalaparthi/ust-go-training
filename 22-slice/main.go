@@ -43,3 +43,6 @@ func remove(slice []int, index int) []int {
 	}
 	return nil
 }
+
+// strings
+// sort
