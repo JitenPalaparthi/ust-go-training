@@ -47,4 +47,8 @@
   - 2- The function returns map and an error
   - if length of slice1 is not equal to length of slice2 then return error
   - if slice one has duplicate elements return error becase duplicate elements cannot be given as keys.
-- Write a function to convert a map to a string and also to byte array
+- Write a function to convert a map to a string of json form and also to byte array
+
+## pointers
+
+- Extend sunOf(v ...interface{})(interface{}) to use pointers. That means even pointers can be passed as arguments and then the function must work.
