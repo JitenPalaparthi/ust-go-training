@@ -52,3 +52,12 @@
 ## pointers
 
 - Extend sunOf(v ...interface{})(interface{}) to use pointers. That means even pointers can be passed as arguments and then the function must work.
+
+## structs
+
+- Create a package named shapes.
+  - Create sub packages rect,square,triangle and circle
+  - Create a func in each package called New()
+  - New must be like a constructor with required parameters and returns Rect,Square,Circle and Triangle with respective to the package. That means in the package Rect , the new function takes Length and Width and returns a &Rect, similarly for all as per their parameters into their respective packages. Make sure New is not a method it is a function in a package that works similar to Constructor
+  - create methods as AreaOf and PerimeterOf for each and every sub package. That means for rect, square, triangle and circle.
+  - Call them all in main
