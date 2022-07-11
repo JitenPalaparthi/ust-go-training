@@ -70,3 +70,7 @@
   - again create a method calle Greet
   - lets myString1 and myString2 have two methods Greet and Greet
   - call them both using type casting
+
+- Create a user defined map
+  - add functions Insert(Key,value), Update(key,value), Delete(key), GetKeys()[]interface{},GetValues()[]interfaces{}
+

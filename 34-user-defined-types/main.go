@@ -21,6 +21,10 @@ func main() {
 
 	fmt.Println("Value and type of num2 methods;ToString and ToByte", num2.ToString(), reflect.TypeOf(num2.ToString()), num2.ToByte(), reflect.TypeOf(num2.ToByte()))
 
+	var num3 int = 200
+
+	fmt.Println("Covert from int to myInt and call ToString:", myInt(num3).ToString())
+
 }
 
 type myInt int
