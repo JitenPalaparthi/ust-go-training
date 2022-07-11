@@ -61,3 +61,12 @@
   - New must be like a constructor with required parameters and returns Rect,Square,Circle and Triangle with respective to the package. That means in the package Rect , the new function takes Length and Width and returns a &Rect, similarly for all as per their parameters into their respective packages. Make sure New is not a method it is a function in a package that works similar to Constructor
   - create methods as AreaOf and PerimeterOf for each and every sub package. That means for rect, square, triangle and circle.
   - Call them all in main
+
+## user defined types
+
+- Implement a type from a type called string
+  - create a method called Greet
+  - implement another type from the existing type
+  - again create a method calle Greet
+  - lets myString1 and myString2 have two methods Greet and Greet
+  - call them both using type casting
