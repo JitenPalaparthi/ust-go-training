@@ -74,3 +74,13 @@
 - Create a user defined map
   - add functions Insert(Key,value), Update(key,value), Delete(key), GetKeys()[]interface{},GetValues()[]interfaces{}
 
+## interface
+
+- Create an interface Perimeter()float32 in the existing example 36-interfaces
+  - Implement IPerimeter for Rect and Square types
+  - Call it in the main function like the way Area is called
+
+- Add Circle and Triangle to the shapes package in example 36-interfaces
+  - Implement IArea and IPerimeter
+  - Create objects for Square and Triangle
+  - Call them in Area and Perimeter Dependency functions.
