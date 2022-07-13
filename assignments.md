@@ -84,3 +84,13 @@
   - Implement IArea and IPerimeter
   - Create objects for Square and Triangle
   - Call them in Area and Perimeter Dependency functions.
+
+## anonymous func
+
+- create anonymous functions to perform add, sub, multiply and divide operatios.
+- store those functions in variables
+- call them using variables. Used in line no 18 in example 37
+
+## go routines
+
+- run all anonymous functions from previous task as go routines
