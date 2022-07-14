@@ -91,6 +91,15 @@
 - store those functions in variables
 - call them using variables. Used in line no 18 in example 37
 
-## go routines
+## goroutines
 
 - run all anonymous functions from previous task as go routines
+
+## channels
+
+- write a function called increment.
+  - call the function 100 times in a loop as a goroutine
+  - the final value after calling increment func for 100 times should be 100
+  - that means increment starts from 1 to 100 and finally it must print 100
+
+- implement greet function in program no 40 without using time.Sleep instead use channels
