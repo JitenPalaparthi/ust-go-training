@@ -1,6 +1,6 @@
 ### keywords
 
-break, case, const, continue, default, else, fallthrough, for, func, goto, if, import, interface, map, package, struct, switch, type, range, return, var
+break, case, chan, const, continue, default, else, fallthrough, for, func, go, goto, if, import, interface, map, package, struct, switch, type, range, return, var
 
 ### Builtin functions
 
