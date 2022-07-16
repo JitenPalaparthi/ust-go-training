@@ -5,6 +5,9 @@ import (
 	"fmt"
 )
 
+// move to heap: The data is stored in heap memory
+// escape to heap: particular variable has to be shared between main and other function or method
+// does not escape to heap: there is a less burden on GC
 func main() {
 	val := getVar()
 	ptr1 := getPtr()
