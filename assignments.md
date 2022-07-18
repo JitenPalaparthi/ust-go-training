@@ -103,3 +103,8 @@
   - that means increment starts from 1 to 100 and finally it must print 100
 
 - implement greet function in program no 40 without using time.Sleep instead use channels
+
+## channels and waitGroup
+
+- re-implement example 46-mutex with channel and WaitGroup rather than mutex and WaitGroup
+
