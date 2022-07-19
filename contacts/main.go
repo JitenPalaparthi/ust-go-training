@@ -1,10 +1,10 @@
 package main
 
 import (
-	"contacts/models"
+	"contacts/handlers"
 	"flag"
-	"fmt"
-	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 var (
@@ -16,35 +16,15 @@ func init() {
 }
 
 func main() {
-	c1 := models.Contact{Name: "Jiten", Email: "JitenP@outlook.Com", Address: "Bangalore", ContactNo: "9618558500", Status: "created"}
-	fmt.Println(c1)
-
 	flag.Parse()
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, "Hello World!")
-	})
-	http.HandleFunc("/ping", pong)
-	http.HandleFunc("/greet", greet("Hello World!"))
+	router := gin.Default()
 
-	fmt.Println("Server started; running on port ", PORT)
-	http.ListenAndServe(":"+PORT, nil)
-	// 0.0.0.0
-	// what is 0.0.0.0 --> All interfaces in the machine
-	// lo --> loopback  that is 127.0.0.1 a.k.a localhost
-	// wl --> can be wireless interface connected to the router
-	// bluetooth
-	// et0
-	// veth
-	// docker bridge
-}
+	router.GET("/ping", handlers.Ping())
+	router.GET("/health", handlers.Health())
+	router.GET("/greet", handlers.Greet("Hello World!"))
 
-func pong(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "pong")
+	//c1 := &models.Contact{ID: 1, Name: "Jiten", Email: "Jitenp@outlook.Com", MoreInfo: "Demo purpose", Address: "Yeshvantpur , Bangalore", ContactNo: "9618558500", Status: "created", LastModified: fmt.Sprint(time.Now().Unix())}
 
-}
-
-func greet(msg string) func(w http.ResponseWriter, r *http.Request) {
-	return func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, msg)
-	}
+	router.POST("/sample", handlers.SamplePost())
+	router.Run(":" + PORT)
 }
