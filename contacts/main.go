@@ -1,24 +1,33 @@
 package main
 
 import (
+	"contacts/database"
 	"contacts/handlers"
 	"flag"
+	"fmt"
 
 	"github.com/gin-gonic/gin"
 )
 
 var (
 	PORT string
+	DSN  string
 )
 
 func init() {
 	flag.StringVar(&PORT, "port", "58080", "--port=8080")
+	flag.StringVar(&DSN, "dbconn", "host=localhost user=admin password=admin123 dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai", `--dbconn= host=localhost user=admin password=admin123 dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai`)
 }
 
 func main() {
 	flag.Parse()
 	router := gin.Default()
 
+	db, err := database.GetConnection(DSN)
+	fmt.Println(db, err)
+	if err != nil {
+		panic(err)
+	}
 	router.GET("/ping", handlers.Ping())
 	router.GET("/health", handlers.Health())
 	router.GET("/greet", handlers.Greet("Hello World!"))
