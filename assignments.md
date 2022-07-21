@@ -116,6 +116,10 @@
   - step-2 ```docker run -d --name pg -e POSTGRES_PASSWORD=admin123 -e POSTGRES_USER=admin -e POSTGRES_DB=contactsdb -p 5432:5432 postgres```
   - step-3: ensure postgres container is running ```docker ps```
 
-## Create Caliclator with Generics
+## Create Calculator with Generics
 
 - Addition, Substraction, Multiplication using generics
+
+## Delete operation
+
+- Currently in contacts demo, the delete operation always returns 1. Modify it to 0 if no delete happens.
