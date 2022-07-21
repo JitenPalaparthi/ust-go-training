@@ -1,6 +1,7 @@
 package models
 
 import (
+	"encoding/json"
 	"errors"
 )
 
@@ -38,4 +39,12 @@ func (c *Contact) Validate() error {
 		return ErrEmptyEmailField
 	}
 	return nil
+}
+
+func (c *Contact) ToJson() (string, error) {
+	buf, err := json.Marshal(c)
+	if err != nil {
+		return "", err
+	}
+	return string(buf), nil
 }

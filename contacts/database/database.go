@@ -1,6 +1,7 @@
 package database
 
 import (
+	"errors"
 	"fmt"
 	"time"
 
@@ -12,6 +13,10 @@ var (
 	MaxRetries uint8 = 5
 	RetryTime  uint8 = 5
 	TimeOut    uint  = 20
+)
+
+var (
+	ErrInvalidID = errors.New("invalid id")
 )
 
 func GetConnection(dsn string) (interface{}, error) {

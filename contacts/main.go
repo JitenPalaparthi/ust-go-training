@@ -31,9 +31,19 @@ func main() {
 	router.GET("/ping", handlers.Ping())
 	router.GET("/health", handlers.Health())
 	router.GET("/greet", handlers.Greet("Hello World!"))
-
-	//c1 := &models.Contact{ID: 1, Name: "Jiten", Email: "Jitenp@outlook.Com", MoreInfo: "Demo purpose", Address: "Yeshvantpur , Bangalore", ContactNo: "9618558500", Status: "created", LastModified: fmt.Sprint(time.Now().Unix())}
-
 	router.POST("/sample", handlers.SamplePost())
+	cdb := &database.ContactDB{DB: db}
+	chandler := &handlers.ContactHandler{IContact: cdb}
+
+	// cfdb := &filedb.ContactFileDB{File: "contacts.fdb"}
+	// chandler := &handlers.ContactHandler{IContact: cfdb}
+
+	v1 := router.Group("/v1/contact")
+	{
+		v1.POST("/create", chandler.CreateContact())
+		v1.GET("/get/:id", chandler.GetContactByID())
+		v1.DELETE("/delete/:id", chandler.DeleteContactByID())
+	}
+
 	router.Run(":" + PORT)
 }
