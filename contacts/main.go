@@ -16,7 +16,7 @@ var (
 
 func init() {
 	flag.StringVar(&PORT, "port", "58080", "--port=8080")
-	flag.StringVar(&DSN, "dbconn", "host=localhost user=admin password=admin123 dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai", `--dbconn= host=localhost user=admin password=admin123 dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai`)
+	flag.StringVar(&DSN, "dbconn", "host=localhost user=postgres password=admin123 dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai", `--dbconn= host=localhost user=admin password=admin123 dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai`)
 }
 
 func main() {
@@ -42,6 +42,7 @@ func main() {
 	{
 		v1.POST("/create", chandler.CreateContact())
 		v1.GET("/get/:id", chandler.GetContactByID())
+		v1.PUT("/update/:id", chandler.UpdateContactByID())
 		v1.DELETE("/delete/:id", chandler.DeleteContactByID())
 	}
 

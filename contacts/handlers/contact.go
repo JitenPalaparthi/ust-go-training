@@ -64,6 +64,32 @@ func (ch *ContactHandler) GetContactByID() gin.HandlerFunc {
 	}
 }
 
+func (ch *ContactHandler) UpdateContactByID() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		id := c.Param("id")
+		buf, err := ioutil.ReadAll(c.Request.Body)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
+		}
+
+		data := make(map[string]interface{})
+
+		err = json.Unmarshal(buf, &data)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
+		}
+		rows, err := ch.IContact.UpdateBy(id, data)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
+		}
+		c.JSON(http.StatusOK, rows)
+
+	}
+}
+
 func (ch *ContactHandler) DeleteContactByID() gin.HandlerFunc {
 	return func(c *gin.Context) {
 

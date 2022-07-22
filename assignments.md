@@ -123,3 +123,7 @@
 ## Delete operation
 
 - Currently in contacts demo, the delete operation always returns 1. Modify it to 0 if no delete happens.
+
+## getAll operation in contacts microservice
+
+- implement getAllContacts in contacts microservice

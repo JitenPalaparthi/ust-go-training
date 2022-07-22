@@ -18,12 +18,12 @@ var (
 type Contact struct {
 	ID           int    `json:"id"`
 	Name         string `json:"name"`
-	MoreInfo     string `json:"moreInfo"`
+	MoreInfo     string `json:"moreInfo" gorm:"column:moreInfo"`
 	Address      string `json:"address"`
 	Email        string `json:"email"`
 	ContactNo    string `json:"contactNo"`
 	Status       string `json:"status"`
-	LastModified string `json:"lastModified"`
+	LastModified string `json:"lastModified" gorm:"column:lastModified"`
 }
 
 func (c *Contact) Validate() error {

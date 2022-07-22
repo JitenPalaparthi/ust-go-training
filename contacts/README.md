@@ -21,5 +21,5 @@
   - Step-0:install docker from docker.com
   - https://docs.docker.com/engine/install/ubuntu/
   - step-1 ```docker pull postgres```
-  - step-2 ```docker run -d --name pg -e POSTGRES_PASSWORD=admin123 -e POSTGRES_USER=admin -e POSTGRES_DB=contactsdb -p 5432:5432 postgres```
+  - step-2 ```docker run -d --name pg -e POSTGRES_PASSWORD=admin123 -e POSTGRES_USER=postgres -e POSTGRES_DB=contactsdb -p 5432:5432 postgres```
   - step-3: ensure postgres container is running ```docker ps```
