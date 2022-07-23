@@ -38,7 +38,7 @@ func (c *ContactDB) GetBy(id string) (*models.Contact, error) {
 	return contact, nil
 }
 
-func (c *ContactDB) UpdateBy(id string, data map[string]interface{}) (interface{}, error) {
+func (c *ContactDB) UpdateBy(id string, data map[string]interface{}) (*models.Contact, error) {
 	//db.Model(&user).Updates(map[string]interface{}{"name": "hello", "age": 18, "active": false})
 	_id, err := strconv.Atoi(id)
 	if err != nil {
@@ -49,7 +49,11 @@ func (c *ContactDB) UpdateBy(id string, data map[string]interface{}) (interface{
 	if tx.Error != nil {
 		return nil, tx.Error
 	}
-	return tx.RowsAffected, nil
+	contact, err = c.GetBy(id)
+	if err != nil {
+		return nil, tx.Error
+	}
+	return contact, nil
 }
 
 func (c *ContactDB) DeleteBy(id string) (interface{}, error) {

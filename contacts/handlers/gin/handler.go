@@ -1,4 +1,4 @@
-package handlers
+package gin
 
 import (
 	"contacts/models"

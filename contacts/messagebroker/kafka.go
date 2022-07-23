@@ -42,13 +42,13 @@ func (m *Messaging) Produce(ctx context.Context) error {
 }
 
 func (m *Messaging) Consume(ctx context.Context) (*Message, error) {
-	l := log.New(os.Stdout, "kafka writer: ", 0)
+	//l := log.New(os.Stdout, "kafka writer: ", 0)
 	// intialize the writer with the broker addresses, and the topic
 	r := kafka.NewReader(kafka.ReaderConfig{
 		Brokers: m.Brokers,
 		Topic:   m.Topic,
 		// assign the logger to the writer
-		Logger: l,
+		//Logger: l,
 	})
 
 	msg, err := r.ReadMessage(ctx)

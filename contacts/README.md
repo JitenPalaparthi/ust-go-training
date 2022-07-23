@@ -32,3 +32,15 @@
   
   ```docker exec -it kafka_kafka_1 bash```
   ```kafka-topics --create --bootstrap-server  localhost:9092 --replication-factor 1 --partitions 1 --topic contacts-create```
+
+- to run consumer
+- ```go run consumer.go```
+
+- This application uses both gin and echo framewors
+- To use gin
+- ```go run main.go --webframework=gin``` or ```go run main.go```
+- To use echo
+- ```go run main.go --webframework=echo```
+- To use both
+- When using both it takes default port give it to gin and for echo it increments the port number by 1. example port=58080; For gin it is 58080 and for echo it is 58081
+- ```go run main.go --webframework=both```
