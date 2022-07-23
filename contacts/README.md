@@ -27,3 +27,8 @@
 - To up and run kafka
 
 ```cd kafka && docker-compose up -d```
+
+- Create a topic in kafka. The below command must run inside the kafka container.
+  
+  ```docker exec -it kafka_kafka_1 bash```
+  ```kafka-topics --create --bootstrap-server  localhost:9092 --replication-factor 1 --partitions 1 --topic contacts-create```
