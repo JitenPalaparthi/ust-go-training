@@ -127,3 +127,10 @@
 ## getAll operation in contacts microservice
 
 - implement getAllContacts in contacts microservice
+  
+## implement a JWT token for echo and gin
+
+- jwt token to be used. In order to do that
+-  create user
+-  upon successful user login, it returns jwt token
+-  for all subsequent requests must use that token to perform create, update, get and delete contact operations
