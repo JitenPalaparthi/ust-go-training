@@ -134,3 +134,11 @@
 -  create user
 -  upon successful user login, it returns jwt token
 -  for all subsequent requests must use that token to perform create, update, get and delete contact operations
+
+## Install grpc tools
+- Install BloomRPC --> Its a client tool similar to Postman but for grpc
+- Follow the documentation steps: https://community.chocolatey.org/packages/bloomrpc
+- Install protoc compiler from https://github.com/protocolbuffers/protobuf/releases/tag/v21.3
+- Install protoc gen for go. Run below two commands in the terminal or powershell
+- ```go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28```
+- ```go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2```
