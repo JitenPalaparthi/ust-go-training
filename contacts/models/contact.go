@@ -6,9 +6,12 @@ import (
 )
 
 var (
-	ErrEmptyNameField  = errors.New("name cannot be empty")
-	ErrEmptyEmailField = errors.New("email cannot be empty")
+	ErrEmptyNameField    = errors.New("name cannot be empty")
+	ErrEmptyEmailField   = errors.New("email cannot be empty")
+	ErrEmptyAddressField = errors.New("address cannot be empty")
 )
+
+// TDD
 
 // const (
 // 	ERREmptyNameField  = "name cannot be empty"
@@ -37,6 +40,10 @@ func (c *Contact) Validate() error {
 		//return fmt.Errorf("email filed cannot be empty")
 		//return errors.New(ERREmptyEmailField)
 		return ErrEmptyEmailField
+	}
+
+	if c.Address == "" {
+		return ErrEmptyAddressField
 	}
 	return nil
 }

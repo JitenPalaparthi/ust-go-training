@@ -26,6 +26,7 @@ func (c *ContactDB) Create(contact *models.Contact) (*models.Contact, error) {
 
 	return contact, nil
 }
+
 func (c *ContactDB) GetBy(id string) (*models.Contact, error) {
 	if id == "" {
 		return nil, ErrInvalidID
