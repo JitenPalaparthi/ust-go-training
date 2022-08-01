@@ -5,6 +5,10 @@ import (
 	"os"
 )
 
+type IContactFileDB interface {
+	Create(contact *models.Contact) (*models.Contact, error)
+}
+
 type ContactFileDB struct {
 	File string
 }
