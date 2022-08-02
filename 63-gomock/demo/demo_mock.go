@@ -33,6 +33,20 @@ func (m *MockReverser) EXPECT() *MockReverserMockRecorder {
 	return m.recorder
 }
 
+// Count mocks base method.
+func (m *MockReverser) Count(str string) int {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Count", str)
+	ret0, _ := ret[0].(int)
+	return ret0
+}
+
+// Count indicates an expected call of Count.
+func (mr *MockReverserMockRecorder) Count(str interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Count", reflect.TypeOf((*MockReverser)(nil).Count), str)
+}
+
 // Reverse mocks base method.
 func (m *MockReverser) Reverse(str string) string {
 	m.ctrl.T.Helper()
